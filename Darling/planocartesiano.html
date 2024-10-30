@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificanos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesEdad.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <h1>Calificanos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>                
+                <li><a href="css.html">Efectos</a></li>
+                <li><a href="javascript.html">Causas</a></li>
+                <li><a href="apps.html">Aplicaciones</a></li>
+                <li><a href="html.html">Soluciones</a></li>
+                <li><a href="planocartesiano.html">Plano</a></li>
+                <li><a href="clima.html">Clima</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano Cartesiano</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon_cartesiano.ico" type="favicon_cartesiano">
+    <script>
+        function determinarCuadrante() {
+            const x = parseFloat(document.getElementById("coordX").value);
+            const y = parseFloat(document.getElementById("coordY").value);
+            let resultado = '';
+
+            if (x === 0 && y === 0) {
+                resultado = "El punto está en el origen.";
+            } else if (x === 0) {
+                resultado = "El punto está en el eje Y.";
+            } else if (y === 0) {
+                resultado = "El punto está en el eje X.";
+            } else if (x > 0 && y > 0) {
+                resultado = "El punto está en el primer cuadrante.";
+            } else if (x < 0 && y > 0) {
+                resultado = "El punto está en el segundo cuadrante.";
+            } else if (x < 0 && y < 0) {
+                resultado = "El punto está en el tercer cuadrante.";
+            } else if (x > 0 && y < 0) {
+                resultado = "El punto está en el cuarto cuadrante.";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Plano Cartesiano</h1>
+    </header>
+    <form>
+        <label for="coordX">Coordenada X:</label>
+        <input type="number" id="coordX"><br>
+
+        <label for="coordY">Coordenada Y:</label>
+        <input type="number" id="coordY"><br>
+
+        <button type="button" onclick="determinarCuadrante()">Determinar Cuadrante</button>
+    </form>
+    <p id="resultado"></p>
+</body>
+</html>
